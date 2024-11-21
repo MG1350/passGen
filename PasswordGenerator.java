@@ -1,9 +1,4 @@
-public class PasswordGenerator(){
-    public static void main(String[] args)
-    {
-        System.out.println("Hi");
-        System.out.println("LabOneA");
-    }
+public class PasswordGenerator{
 	private int len;
 	private String chars;
 	public static int count = 0;
@@ -21,12 +16,23 @@ public class PasswordGenerator(){
 	public String pwGen(){
 		String temp = chars + ".";
 		int iter = len;
-        while(len != 0){
+        while(iter != 0){
         	temp += (int) (Math.random()*9) + 1;
-			len--;
+			iter--;
         }
       	count++;
         return temp;
 	}
-
+	public static void main(String[] args) {
+        PasswordGenerator pw1 = new PasswordGenerator(4,"chs");
+        System.out.println(pw1.pwCount());
+        System.out.println(pw1.pwGen());
+        System.out.println(pw1.pwGen());
+        System.out.println(pw1.pwCount());
+        PasswordGenerator pw2 = new PasswordGenerator(6);
+        System.out.println(pw2.pwCount());
+        System.out.println(pw2.pwGen());
+        System.out.println(pw2.pwCount());
+        System.out.println(pw1.pwCount());
+    }
 }
